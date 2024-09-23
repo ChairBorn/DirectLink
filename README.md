@@ -81,4 +81,7 @@ Logging & Monitoring: For maintaining application health and security.
 
 ### FrontEnd Structure and Deployment
 
-To create your Project `npx create-react-app directlink-web [you can rename this]` 
+To create your Project:
+`npx create-react-app directlink-web [you can rename this]`
+`cd directlink-web`
+`npm install axios react-router-dom`
