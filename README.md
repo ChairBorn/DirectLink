@@ -78,3 +78,7 @@ Logging & Monitoring: For maintaining application health and security.
 - **CI/CD:** GitHub Actions, GitLab CI, or Jenkins
 - **Hosting:** AWS, Google Cloud Platform (GCP), or Azure
 - **Monitoring:** Prometheus & Grafana, Sentry for error tracking
+
+### FrontEnd Structure and Deployment
+
+To create your Project `npx create-react-app directlink-web [you can rename this]` 
