@@ -10,7 +10,7 @@ class User(Base):
     username = Column(String, unique=True, index=True, nullable=False)
     email = Column(String, unique=True, index=True, nullable=False)
     hashed_password = Column(String, nullable=False)
-    created_at = Column(DateTime, default=datetime.utcnow)
+    created_at = Column(DateTime, default=datetime.now(datetime.timezone.utc))
     
     videos = relationship("Video", back_populates="owner")
     votes = relationship("Vote", back_populates="voter")
@@ -22,7 +22,7 @@ class Video(Base):
     title = Column(String, index=True)
     url = Column(String, unique=True, nullable=False)
     owner_id = Column(Integer, ForeignKey("users.id"))
-    created_at = Column(DateTime, default=datetime.utcnow)
+    created_at = Column(DateTime, default=datetime.now(datetime.timezone.utc))
     
     owner = relationship("User", back_populates="videos")
     votes = relationship("Vote", back_populates="video")
@@ -33,7 +33,7 @@ class Vote(Base):
     id = Column(Integer, primary_key=True, index=True)
     user_id = Column(Integer, ForeignKey("users.id"))
     video_id = Column(Integer, ForeignKey("videos.id"))
-    created_at = Column(DateTime, default=datetime.utcnow)
+    created_at = Column(DateTime, default=datetime.now(datetime.timezone.utc))
     
     voter = relationship("User", back_populates="votes")
     video = relationship("Video", back_populates="votes")
